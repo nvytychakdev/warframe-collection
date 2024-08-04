@@ -1,6 +1,6 @@
 import { Directive, Input, computed, input, signal } from '@angular/core';
 import { hlm } from '@spartan-ng/ui-core';
-import { type VariantProps, cva } from 'class-variance-authority';
+import { cva, type VariantProps } from 'class-variance-authority';
 import type { ClassValue } from 'clsx';
 
 export const buttonVariants = cva(
@@ -29,7 +29,7 @@ export const buttonVariants = cva(
       variant: 'default',
       size: 'default',
     },
-  }
+  },
 );
 export type ButtonVariants = VariantProps<typeof buttonVariants>;
 
@@ -48,8 +48,8 @@ export class HlmButtonDirective {
     hlm(
       buttonVariants({ variant: this._variant(), size: this._size() }),
       this._settableClass(),
-      this.userClass()
-    )
+      this.userClass(),
+    ),
   );
 
   setClass(value: ClassValue) {

@@ -1,8 +1,12 @@
-<nav class="flex gap-2 p-2 border-b border-slate-800 w-full">
-  <button hlmBtn variant="secondary">Landing</button>
-  <button hlmBtn>Connection</button>
-</nav>
+<div class="bg-slate-900 h-full dark:text-white flex flex-col">
+  <nav
+    class="flex flex-initial gap-2 p-2 border-b border-slate-800 bg-slate-950 w-full"
+  >
+    <a hlmBtn variant="secondary" [routerLink]="'/'">Landing</a>
+    <a hlmBtn [routerLink]="'/collection'">Warframes</a>
+  </nav>
 
-<section>
-  <ng-content></ng-content>
-</section>
+  <section class="p-2 flex-1 overflow-auto">
+    <ng-content></ng-content>
+  </section>
+</div>
