@@ -1,0 +1,28 @@
+<div
+  class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-slate-800 bg-slate-950 p-2 transition-colors duration-150"
+  role="button"
+  tabindex="0"
+>
+  <h1>{{ item().name }}</h1>
+  <div class="relative h-[200px] w-[200px]">
+    @if (!previewLoaded()) {
+      <div
+        class="absolute left-0 top-0 flex h-full w-full items-center justify-center transition-opacity"
+      >
+        <hlm-spinner />
+      </div>
+    }
+    <img
+      class="absolute left-0 top-0 opacity-0 transition-opacity"
+      [class.loaded]="previewLoaded()"
+      [src]="previewLink()"
+      (load)="previewLoaded.set(true)"
+      loading="lazy"
+      alt="warframe-image"
+    />
+  </div>
+
+  <div>
+    <app-warframe-state [(state)]="state" />
+  </div>
+</div>

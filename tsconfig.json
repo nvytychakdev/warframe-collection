@@ -24,7 +24,7 @@
     ],
     "paths": {
       "@spartan-ng/ui-button-helm": [
-        "src/libs/ui/ui-button-helm/src/index.ts"
+        ".\\src/libs/ui/ui-button-helm/src/index.ts"
       ],
       "@spartan-ng/ui-spinner-helm": [
         ".\\src/libs/ui/ui-spinner-helm/src/index.ts"

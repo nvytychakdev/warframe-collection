@@ -1,0 +1,13 @@
+<div
+  class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+>
+  @if (loading()) {
+    @for (index of LOADER_SECTIONS; track $index) {
+      <app-warframe-card-loader />
+    }
+  } @else {
+    @for (warframe of warframes(); track $index) {
+      <app-warframe-card [@inOut] [item]="warframe" />
+    }
+  }
+</div>

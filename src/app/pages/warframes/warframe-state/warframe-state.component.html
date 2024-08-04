@@ -1,0 +1,34 @@
+<brn-radio-group
+  hlm
+  [ngModel]="state()"
+  (ngModelChange)="state.set($event)"
+  class="group flex overflow-hidden rounded-lg border border-slate-800"
+>
+  <brn-radio
+    hlm
+    class="relative overflow-ellipsis whitespace-nowrap hover:bg-slate-400 [&.brn-radio-checked]:bg-white [&.brn-radio-checked]:text-black"
+    value="pending"
+  >
+    <div class="flex cursor-pointer flex-col items-center gap-1 px-3 py-1">
+      <hlm-icon name="lucideBadgeX" />
+    </div>
+  </brn-radio>
+  <brn-radio
+    hlm
+    class="relative overflow-ellipsis whitespace-nowrap hover:bg-amber-600 [&.brn-radio-checked]:bg-amber-700"
+    value="inprogress"
+  >
+    <div class="flex cursor-pointer flex-col items-center gap-1 px-3 py-1">
+      <hlm-icon name="lucideBadgeAlert" />
+    </div>
+  </brn-radio>
+  <brn-radio
+    hlm
+    class="relative overflow-ellipsis whitespace-nowrap hover:bg-emerald-600 [&.brn-radio-checked]:bg-emerald-700"
+    value="done"
+  >
+    <div class="flex cursor-pointer flex-col items-center gap-1 px-3 py-1">
+      <hlm-icon name="lucideBadgeCheck" />
+    </div>
+  </brn-radio>
+</brn-radio-group>

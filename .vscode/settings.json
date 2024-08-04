@@ -2,9 +2,14 @@
   "files.associations": { "*.scss": "postcss" },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
   "angular-schematics.schematicsDefaultOptions": {
     "angular-*": {
-      "externalTemplate": true
+      "externalTemplate": true,
+      "style": "scss",
+      "standalone": true
     }
   }
 }

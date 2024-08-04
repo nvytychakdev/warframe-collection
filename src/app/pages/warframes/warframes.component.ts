@@ -7,18 +7,36 @@ import {
   signal,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
+import {
+  BrnRadioComponent,
+  BrnRadioGroupComponent,
+} from '@spartan-ng/ui-radiogroup-brain';
+import {
+  HlmRadioDirective,
+  HlmRadioGroupDirective,
+} from '@spartan-ng/ui-radiogroup-helm';
 import { HlmSkeletonComponent } from '@spartan-ng/ui-skeleton-helm';
 import { HlmSpinnerComponent } from '@spartan-ng/ui-spinner-helm';
 import { defer, finalize, tap } from 'rxjs';
 import { Item } from 'warframe-items';
-import { CollectionCardComponent } from './collection-card/collection-card.component';
+import { WarframeCardLoaderComponent } from './warframe-card-loader/warframe-card-loader.component';
+import { WarframeCardComponent } from './warframe-card/warframe-card.component';
 
 @Component({
-  selector: 'app-collection',
+  selector: 'app-warframes',
   standalone: true,
-  imports: [CollectionCardComponent, HlmSpinnerComponent, HlmSkeletonComponent],
-  templateUrl: `./collection.component.html`,
-  styleUrl: './collection.component.scss',
+  imports: [
+    HlmSpinnerComponent,
+    HlmSkeletonComponent,
+    HlmRadioGroupDirective,
+    HlmRadioDirective,
+    BrnRadioComponent,
+    BrnRadioGroupComponent,
+    WarframeCardComponent,
+    WarframeCardLoaderComponent,
+  ],
+  templateUrl: './warframes.component.html',
+  styleUrl: './warframes.component.scss',
   animations: [
     trigger('inOut', [
       transition(':enter', [
@@ -30,7 +48,7 @@ import { CollectionCardComponent } from './collection-card/collection-card.compo
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CollectionComponent {
+export class WarframesComponent {
   readonly LOADER_SECTIONS = new Array(20).fill(null);
   private readonly http = inject(HttpClient);
 
