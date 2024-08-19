@@ -1,5 +1,5 @@
 <div
-  class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-neutral-800 bg-neutral-950 p-2 transition-colors duration-150"
+  class="flex h-full cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-neutral-800 bg-neutral-950 p-2 transition-colors duration-150"
   role="button"
   tabindex="0"
 >
@@ -40,13 +40,15 @@
       />
     </div>
 
-    <div class="flex flex-wrap gap-4">
-      @for (component of warframeComponents(); track $index) {
-        <app-warframe-card-part
-          [item]="component"
-          (stateChange)="onComponentProgress(component, $event)"
-        />
-      }
-    </div>
+    @if (warframeComponents()?.length) {
+      <div class="flex flex-wrap gap-4">
+        @for (component of warframeComponents(); track $index) {
+          <app-warframe-card-part
+            [item]="component"
+            (stateChange)="onComponentProgress(component, $event)"
+          />
+        }
+      </div>
+    }
   </div>
 </div>

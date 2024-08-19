@@ -15,11 +15,15 @@ import {
 import { HlmBadgeDirective } from '@spartan-ng/ui-badge-helm';
 import { provideIcons } from '@spartan-ng/ui-icon-helm';
 import { HlmSpinnerComponent } from '@spartan-ng/ui-spinner-helm';
-import { WARFRAME_CDN } from 'src/app/configs/warframe.model';
 import { type Item, type Warframe } from 'warframe-items';
 import { WarframeCardPartComponent } from '../warframe-card-part/warframe-card-part.component';
 import { WarframeStateComponent } from '../warframe-state/warframe-state.component';
-import { ProgressState, WarframeProgress } from '../warframes.model';
+import {
+  ProgressState,
+  WarframeProgress,
+  getItemPreview,
+  getWarframeProgress,
+} from '../warframes.model';
 
 @Component({
   selector: 'app-warframe-card',
@@ -47,15 +51,7 @@ export class WarframeCardComponent {
     ),
   );
   readonly previewLoaded = signal(false);
-  readonly previewLink = computed(() => {
-    const item = this.warframe();
-    if ('wikiaThumbnail' in item) {
-      const [image] = `${item.wikiaThumbnail}`.split('.png');
-      return `${image}.png`;
-    }
-
-    return `${WARFRAME_CDN}/${item.imageName}`;
-  });
+  readonly previewLink = computed(() => getItemPreview(this.warframe()));
 
   /**
    *
@@ -64,29 +60,20 @@ export class WarframeCardComponent {
    */
   onComponentProgress(component: Item, state: ProgressState) {
     const currentProgress = this.warframeProgress();
-
-    const components = {
-      ...currentProgress?.components,
-      [component.uniqueName || '']: state,
-    };
-
-    const isAllDone =
-      Object.entries(components).length === this.warframeComponents()?.length &&
-      Object.values(components).every((s) => s === 'done');
-
-    const isInProgress = Object.values(components).some(
-      (s) => s === 'inprogress' || s === 'done',
+    const { components, progress } = getWarframeProgress(
+      component,
+      state,
+      this.warframeComponents(),
+      currentProgress,
     );
-
-    const progress = isAllDone
-      ? 'done'
-      : isInProgress
-        ? 'inprogress'
-        : 'pending';
 
     this.warframeProgress.set({
       components,
       progress,
     });
+  }
+
+  openBase64InNewTab(data: string) {
+    window.open(data);
   }
 }
