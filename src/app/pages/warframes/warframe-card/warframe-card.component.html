@@ -1,28 +1,52 @@
 <div
-  class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-slate-800 bg-slate-950 p-2 transition-colors duration-150"
+  class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border border-neutral-800 bg-neutral-950 p-2 transition-colors duration-150"
   role="button"
   tabindex="0"
 >
-  <h1>{{ item().name }}</h1>
-  <div class="relative h-[200px] w-[200px]">
-    @if (!previewLoaded()) {
-      <div
-        class="absolute left-0 top-0 flex h-full w-full items-center justify-center transition-opacity"
-      >
-        <hlm-spinner />
-      </div>
-    }
-    <img
-      class="absolute left-0 top-0 opacity-0 transition-opacity"
-      [class.loaded]="previewLoaded()"
-      [src]="previewLink()"
-      (load)="previewLoaded.set(true)"
-      loading="lazy"
-      alt="warframe-image"
-    />
-  </div>
+  <h1>
+    {{ warframe().name }}
 
-  <div>
-    <app-warframe-state [(state)]="state" />
+    @switch (warframeProgress()?.progress) {
+      @case ("done") {
+        <span hlmBadge class="bg-emerald-700 text-white hover:bg-emerald-900">
+          Done
+        </span>
+      }
+      @case ("inprogress") {
+        <span hlmBadge class="bg-amber-700 text-white hover:bg-amber-900">
+          In progress
+        </span>
+      }
+    }
+  </h1>
+
+  <div class="flex w-full items-center justify-around gap-4">
+    <div class="relative flex h-[200px] w-[200px] flex-shrink-0 gap-2">
+      @if (!previewLoaded()) {
+        <div
+          class="absolute left-0 top-0 flex h-full w-full items-center justify-center transition-opacity"
+        >
+          <hlm-spinner />
+        </div>
+      }
+
+      <img
+        class="absolute left-0 top-0 opacity-0 transition-opacity"
+        [class.loaded]="previewLoaded()"
+        [src]="previewLink()"
+        (load)="previewLoaded.set(true)"
+        loading="lazy"
+        alt="warframe-image"
+      />
+    </div>
+
+    <div class="flex flex-wrap gap-4">
+      @for (component of warframeComponents(); track $index) {
+        <app-warframe-card-part
+          [item]="component"
+          (stateChange)="onComponentProgress(component, $event)"
+        />
+      }
+    </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <div
-  class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
+  class="grid grid-cols-1 gap-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
 >
   @if (loading()) {
     @for (index of LOADER_SECTIONS; track $index) {
@@ -7,7 +7,11 @@
     }
   } @else {
     @for (warframe of warframes(); track $index) {
-      <app-warframe-card [@inOut] [item]="warframe" />
+      <app-warframe-card
+        [@inOut]
+        [warframe]="warframe"
+        (warframeProgressChange)="onWarframeStateChange(warframe, $event)"
+      />
     }
   }
 </div>

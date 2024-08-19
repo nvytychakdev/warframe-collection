@@ -1,0 +1,409 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.5.6",
+  "deps": {
+    "@angular/animations": "^18.0.0",
+    "@angular/cdk": "^18.1.3",
+    "@angular/common": "^18.0.0",
+    "@angular/compiler": "^18.0.0",
+    "@angular/core": "^18.0.0",
+    "@angular/forms": "^18.0.0",
+    "@angular/platform-browser": "^18.0.0",
+    "@angular/platform-browser-dynamic": "^18.0.0",
+    "@angular/platform-server": "^18.0.0",
+    "@angular/router": "^18.0.0",
+    "@angular/ssr": "^18.0.3",
+    "@ng-icons/core": "^25.1.0",
+    "@ng-icons/lucide": "^29.2.2",
+    "@spartan-ng/ui-core": "^0.0.1-alpha.353",
+    "@spartan-ng/ui-radiogroup-brain": "0.0.1-alpha.353",
+    "class-variance-authority": "^0.6.0",
+    "clsx": "^1.2.1",
+    "dexie": "^4.0.8",
+    "express": "^4.18.2",
+    "ngx-indexed-db": "^19.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "warframe-items": "^1.1262.109",
+    "zone.js": "~0.14.3",
+    "@angular-devkit/build-angular": "^18.0.3",
+    "@angular/cli": "^18.0.3",
+    "@angular/compiler-cli": "^18.0.0",
+    "@spartan-ng/cli": "^0.0.1-alpha.361",
+    "@types/express": "^4.17.17",
+    "@types/jasmine": "~5.1.0",
+    "@types/node": "^18.18.0",
+    "angular-eslint": "18.2.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.8.0",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "nodemon": "^3.1.4",
+    "postcss": "^8.4.40",
+    "prettier": "^3.3.3",
+    "prettier-plugin-organize-imports": "^4.0.0",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^3.4.7",
+    "tailwindcss-animate": "^1.0.6",
+    "typescript": "~5.4.2",
+    "typescript-eslint": "8.0.0"
+  },
+  "pathMappings": {
+    "@spartan-ng/ui-button-helm": [
+      ".\\src/libs/ui/ui-button-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-spinner-helm": [
+      ".\\src/libs/ui/ui-spinner-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-skeleton-helm": [
+      ".\\src/libs/ui/ui-skeleton-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-radiogroup-helm": [
+      ".\\src/libs/ui/ui-radiogroup-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-icon-helm": [
+      ".\\src/libs/ui/ui-icon-helm/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {
+      "warframe-collection": [
+        {
+          "file": ".editorconfig",
+          "hash": "17241496168097493888"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "10175894702052279752"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "4693656204519120894"
+        },
+        {
+          "file": ".vscode/extensions.json",
+          "hash": "11934160580685414355"
+        },
+        {
+          "file": ".vscode/launch.json",
+          "hash": "17406702432687230417"
+        },
+        {
+          "file": ".vscode/settings.json",
+          "hash": "9282081983417431067"
+        },
+        {
+          "file": ".vscode/tasks.json",
+          "hash": "10093397977228577162"
+        },
+        {
+          "file": "README.md",
+          "hash": "8925698013676544192"
+        },
+        {
+          "file": "angular.json",
+          "hash": "752032663621107715"
+        },
+        {
+          "file": "eslint.config.js",
+          "hash": "4658132700702135261"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "3313041898565095772"
+        },
+        {
+          "file": "package.json",
+          "hash": "4584396971978983462",
+          "deps": [
+            "npm:@angular-devkit/build-angular",
+            "npm:@angular/cli",
+            "npm:@angular/compiler-cli",
+            "npm:@spartan-ng/cli",
+            "npm:@types/express",
+            "npm:@types/jasmine",
+            "npm:@types/node",
+            "npm:angular-eslint",
+            "npm:autoprefixer",
+            "npm:eslint",
+            "npm:jasmine-core",
+            "npm:karma",
+            "npm:karma-chrome-launcher",
+            "npm:karma-coverage",
+            "npm:karma-jasmine",
+            "npm:karma-jasmine-html-reporter",
+            "npm:nodemon",
+            "npm:postcss",
+            "npm:prettier",
+            "npm:prettier-plugin-organize-imports",
+            "npm:prettier-plugin-tailwindcss",
+            "npm:tailwind-merge",
+            "npm:tailwindcss",
+            "npm:tailwindcss-animate",
+            "npm:typescript",
+            "npm:typescript-eslint",
+            "npm:@angular/animations",
+            "npm:@angular/cdk",
+            "npm:@angular/common",
+            "npm:@angular/compiler",
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/platform-browser",
+            "npm:@angular/platform-browser-dynamic",
+            "npm:@angular/platform-server",
+            "npm:@angular/router",
+            "npm:@angular/ssr",
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "npm:@spartan-ng/ui-radiogroup-brain",
+            "npm:class-variance-authority",
+            "npm:clsx",
+            "npm:dexie",
+            "npm:express",
+            "npm:ngx-indexed-db",
+            "npm:rxjs",
+            "npm:tslib",
+            "npm:warframe-items",
+            "npm:zone.js"
+          ]
+        },
+        {
+          "file": "public/favicon.ico",
+          "hash": "3988961587069885523"
+        },
+        {
+          "file": "server.ts",
+          "hash": "11810479884188273827"
+        },
+        {
+          "file": "src/api/index.ts",
+          "hash": "15300741055017894411"
+        },
+        {
+          "file": "src/api/warframes.ts",
+          "hash": "14169842777855760288"
+        },
+        {
+          "file": "src/app/app.component.html",
+          "hash": "10157848940482166957"
+        },
+        {
+          "file": "src/app/app.component.scss",
+          "hash": "2938275297600099222"
+        },
+        {
+          "file": "src/app/app.component.spec.ts",
+          "hash": "501583602931262242"
+        },
+        {
+          "file": "src/app/app.component.ts",
+          "hash": "8208322620431669909"
+        },
+        {
+          "file": "src/app/app.config.server.ts",
+          "hash": "15184490126418035619"
+        },
+        {
+          "file": "src/app/app.config.ts",
+          "hash": "17535931587744514855"
+        },
+        {
+          "file": "src/app/app.routes.ts",
+          "hash": "16760259233391229213"
+        },
+        {
+          "file": "src/app/configs/warframe.model.ts",
+          "hash": "2401535262609905844"
+        },
+        {
+          "file": "src/app/core/api/api.service.ts",
+          "hash": "6856020248726170501"
+        },
+        {
+          "file": "src/app/core/index.ts",
+          "hash": "15587097919753101475"
+        },
+        {
+          "file": "src/app/core/storage/storage.service.ts",
+          "hash": "4168150728735681850"
+        },
+        {
+          "file": "src/app/layouts/default-layout/default-layout.component.html",
+          "hash": "6168328116179587948"
+        },
+        {
+          "file": "src/app/layouts/default-layout/default-layout.component.scss",
+          "hash": "8354181540751638455"
+        },
+        {
+          "file": "src/app/layouts/default-layout/default-layout.component.ts",
+          "hash": "17146244966394165907"
+        },
+        {
+          "file": "src/app/pages/landing/landing.component.html",
+          "hash": "12596398727207387766"
+        },
+        {
+          "file": "src/app/pages/landing/landing.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "src/app/pages/landing/landing.component.ts",
+          "hash": "13397466207690796736"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-card-loader/warframe-card-loader.component.html",
+          "hash": "12997051382011938194"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-card-loader/warframe-card-loader.component.scss",
+          "hash": "312653377588961541"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-card-loader/warframe-card-loader.component.ts",
+          "hash": "10780876461528563074"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-card-part/warframe-card-part.component.html",
+          "hash": "11999875908125437893"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-card-part/warframe-card-part.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-card-part/warframe-card-part.component.ts",
+          "hash": "10866690139888489653"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-card/warframe-card.component.html",
+          "hash": "8433605821955866883"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-card/warframe-card.component.scss",
+          "hash": "1023812146186119620"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-card/warframe-card.component.ts",
+          "hash": "4661012981567520676"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-state/warframe-state.component.html",
+          "hash": "2535866013175701584"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-state/warframe-state.component.scss",
+          "hash": "7289643434492444894"
+        },
+        {
+          "file": "src/app/pages/warframes/warframe-state/warframe-state.component.ts",
+          "hash": "13078195053831825698"
+        },
+        {
+          "file": "src/app/pages/warframes/warframes.component.html",
+          "hash": "8709468816876602221"
+        },
+        {
+          "file": "src/app/pages/warframes/warframes.component.scss",
+          "hash": "13027103444035360129"
+        },
+        {
+          "file": "src/app/pages/warframes/warframes.component.ts",
+          "hash": "9771505428644935478"
+        },
+        {
+          "file": "src/index.html",
+          "hash": "4623890916099550645"
+        },
+        {
+          "file": "src/libs/ui/ui-button-helm/src/index.ts",
+          "hash": "5860527431308091991"
+        },
+        {
+          "file": "src/libs/ui/ui-button-helm/src/lib/hlm-button.directive.ts",
+          "hash": "6204251793416943620"
+        },
+        {
+          "file": "src/libs/ui/ui-icon-helm/src/index.ts",
+          "hash": "15313191911740362975"
+        },
+        {
+          "file": "src/libs/ui/ui-icon-helm/src/lib/hlm-icon.component.spec.ts",
+          "hash": "4553494485907318760"
+        },
+        {
+          "file": "src/libs/ui/ui-icon-helm/src/lib/hlm-icon.component.ts",
+          "hash": "166660981264464896"
+        },
+        {
+          "file": "src/libs/ui/ui-radiogroup-helm/src/index.ts",
+          "hash": "13512683982367308525"
+        },
+        {
+          "file": "src/libs/ui/ui-radiogroup-helm/src/lib/hlm-radio-group.directive.ts",
+          "hash": "9270406681646531646"
+        },
+        {
+          "file": "src/libs/ui/ui-radiogroup-helm/src/lib/hlm-radio-indicator.component.ts",
+          "hash": "16540814835139135929"
+        },
+        {
+          "file": "src/libs/ui/ui-radiogroup-helm/src/lib/hlm-radio.directive.ts",
+          "hash": "15723741728225993451"
+        },
+        {
+          "file": "src/libs/ui/ui-skeleton-helm/src/index.ts",
+          "hash": "6658956960379025064"
+        },
+        {
+          "file": "src/libs/ui/ui-skeleton-helm/src/lib/hlm-skeleton.component.ts",
+          "hash": "12747442148173382983"
+        },
+        {
+          "file": "src/libs/ui/ui-spinner-helm/src/index.ts",
+          "hash": "12704929667170104561"
+        },
+        {
+          "file": "src/libs/ui/ui-spinner-helm/src/lib/hlm-spinner.component.ts",
+          "hash": "400787289500526830"
+        },
+        {
+          "file": "src/main.server.ts",
+          "hash": "9257623809215978365"
+        },
+        {
+          "file": "src/main.ts",
+          "hash": "875041330523952236"
+        },
+        {
+          "file": "src/styles.scss",
+          "hash": "14094557539423036509"
+        },
+        {
+          "file": "tailwind.config.js",
+          "hash": "3994770295098178513"
+        },
+        {
+          "file": "tsconfig.app.json",
+          "hash": "4083687997893277661"
+        },
+        {
+          "file": "tsconfig.json",
+          "hash": "14176617681740353710"
+        },
+        {
+          "file": "tsconfig.spec.json",
+          "hash": "11023685540591620072"
+        }
+      ]
+    },
+    "nonProjectFiles": []
+  }
+}

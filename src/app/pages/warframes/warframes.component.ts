@@ -17,10 +17,12 @@ import {
 } from '@spartan-ng/ui-radiogroup-helm';
 import { HlmSkeletonComponent } from '@spartan-ng/ui-skeleton-helm';
 import { HlmSpinnerComponent } from '@spartan-ng/ui-spinner-helm';
-import { defer, finalize, tap } from 'rxjs';
-import { Item } from 'warframe-items';
+import { Observable, defer, finalize, tap } from 'rxjs';
+import { StorageService } from 'src/app/core';
+import type { Warframe } from 'warframe-items';
 import { WarframeCardLoaderComponent } from './warframe-card-loader/warframe-card-loader.component';
 import { WarframeCardComponent } from './warframe-card/warframe-card.component';
+import { WarframeProgress } from './warframes.model';
 
 @Component({
   selector: 'app-warframes',
@@ -49,19 +51,32 @@ import { WarframeCardComponent } from './warframe-card/warframe-card.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WarframesComponent {
+  private readonly _storage = inject(StorageService);
   readonly LOADER_SECTIONS = new Array(20).fill(null);
   private readonly http = inject(HttpClient);
 
   readonly loading = signal(true);
   readonly warframes = toSignal(this.getWarframes());
 
-  private getWarframes() {
+  private getWarframes(): Observable<Warframe[]> {
     return defer(() => {
       this.loading.set(true);
-      return this.http.get<Item[]>('/api/warframes');
+      return this.http.get<Warframe[]>('/api/warframes');
     }).pipe(
       tap(console.log),
       finalize(() => this.loading.set(false)),
     );
+  }
+
+  onWarframeStateChange(warframe: Warframe, state?: WarframeProgress) {
+    console.log(warframe, state);
+    // const transaction = this._storage.getTransaction('warframe_state');
+    // console.log(transaction);
+    // if (!transaction) return;
+    // const storage = this._storage.craeteStore('warframes');
+    // const data = { name: warframe.uniqueName, state };
+    // if (!storage) return;
+    // this._storage.add(storage, data).subscribe(console.log);
+    // storage.get('warframes');
   }
 }
