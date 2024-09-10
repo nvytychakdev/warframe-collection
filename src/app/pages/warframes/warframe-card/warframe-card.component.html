@@ -44,6 +44,7 @@
       <div class="flex flex-wrap gap-4">
         @for (component of warframeComponents(); track $index) {
           <app-warframe-card-part
+            [warframe]="warframe()"
             [item]="component"
             (stateChange)="onComponentProgress(component, $event)"
           />

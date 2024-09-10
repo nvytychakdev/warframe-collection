@@ -6,8 +6,12 @@ import {
   input,
   model,
 } from '@angular/core';
-import { type Item } from 'warframe-items';
-import { getItemPreview, getItemProgressState } from '../warframes.model';
+import { Warframe, type Item } from 'warframe-items';
+import {
+  ProgressState,
+  getItemPreview,
+  getItemProgressState,
+} from '../warframes.model';
 
 @Component({
   selector: 'app-warframe-card-part',
@@ -18,9 +22,16 @@ import { getItemPreview, getItemProgressState } from '../warframes.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WarframeCardPartComponent {
+  readonly warframe = input.required<Warframe>();
   readonly item = input.required<Item>();
-  readonly state = model<'pending' | 'inprogress' | 'done'>('pending');
+  readonly state = model<ProgressState>('pending');
   readonly previewLink = computed(() => getItemPreview(this.item()));
+  readonly blueprintPreviewLink = computed(() => {
+    if (this.item().name === 'Blueprint') {
+      return getItemPreview(this.warframe());
+    }
+    return undefined;
+  });
 
   toggleState() {
     const newState = getItemProgressState(this.state());

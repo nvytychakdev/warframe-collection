@@ -1,5 +1,5 @@
 <div
-  class="h-16 w-16 overflow-hidden rounded-full border-4 transition-colors"
+  class="relative h-16 w-16 overflow-hidden rounded-full border-4 transition-colors"
   [class.border-neutral-700]="state() === 'pending'"
   [class.border-amber-600]="state() === 'inprogress'"
   [class.border-emerald-600]="state() === 'done'"
@@ -7,5 +7,13 @@
   (click)="toggleState()"
   (keydown.enter)="toggleState()"
 >
+  @if (blueprintPreviewLink(); as bp) {
+    <img
+      [src]="bp"
+      loading="lazy"
+      alt="warframe-part-image-bp"
+      class="absolute"
+    />
+  }
   <img [src]="previewLink()" loading="lazy" alt="warframe-part-image" />
 </div>
